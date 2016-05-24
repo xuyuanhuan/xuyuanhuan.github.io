@@ -1,9 +1,311 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
 </head>
+
 <body>
-  我是徐元桓
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-jsjichu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/24/jsjichu/" class="article-date">
+  <time datetime="2016-05-24T10:06:02.000Z" itemprop="datePublished">2016-05-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#js的引入方式</p>
+<p>###在一对script标签中引入js代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 内部引入 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><br><span class="line">		alert("内部引入");</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 外部引入 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/index.js"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>##js引入放到头部或底部的区别</p>
+<p>###头部引入<br>代码执行时下面标签内容没加载完的时候如果需要获取元素是会出错的，所有需要加上<em>window.onload</em>等页面所有内容加载完载获取就可以了。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><br><span class="line">		window.onload = function () &#123;</span><br><span class="line">			// 等页面加载完在执行</span><br><span class="line">		&#125;</span><br><span class="line">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>###底部引入<br>代码是重上往下执行的，执行到底部的是后，body里面的所有内容都加载完了，所有在底部用JS获取元素也没有问题了。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><br><span class="line">	alert("底部")</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>#弹框</p>
+<p>###alert语句<br>这是一个alert语句,用来在浏览器中弹出一个提示框的。</p>
+<p>###confirm语句<br>这是一个confirm语句,用来在浏览器中弹出一个确认框的。</p>
+<p>###prompt语句<br>这是一个prompt语句,用来在浏览器中弹出一个输入框的。</p>
+<p>#什么是变量?</p>
+<p>变量首先是一个容器，可以用来存放数据，而且存放在这个容器中的数据可以发生变化。</p>
+<p>#如何定义变量?</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">12</span>;</span><br><span class="line"><span class="comment">//以上代码定义了一个变量 a ,变量里保存的值是数值 12 。</span></span><br></pre></td></tr></table></figure>
+<p>#变量的命名规则<br>1.区分大小写；</p>
+<p>2.第一个字符必须是一个字母、下划线（_）或一个美元符号（$）;</p>
+<p>3.其他字符可以是字母、下划线、美元符号或数字；</p>
+<p>4.不能含有空格；</p>
+<p>5.不能以关键字或保留字命名。</p>
+<p><strong><em>关键字可用于表示控制语句的开始或结束，或者用于执行特定操作等。<br>按照规则，关键字也是语言保留的，不能用作标识符</em></strong></p>
+<p>#五种基本数据类型<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span> 	<span class="comment">//数字类型</span></span><br><span class="line"><span class="built_in">String</span> 	<span class="comment">//字符串类型</span></span><br><span class="line"><span class="built_in">Boolean</span> 	<span class="comment">//布尔类型</span></span><br><span class="line"><span class="literal">undefined</span> <span class="comment">//未定义类型</span></span><br><span class="line"><span class="literal">null</span> 		<span class="comment">//空类型</span></span><br></pre></td></tr></table></figure></p>
+<p>#js中的运算符 算数运算符<br>+加</p>
+<p>-减</p>
+<p>*乘</p>
+<p>/除</p>
+<p>% 求余(取模)</p>
+<p>#赋值运算符<br>=赋值</p>
+<p>+= 加后赋值 </p>
+<p>-= 减后赋值 </p>
+<p>*= 乘后赋值 </p>
+<p>/= 除后赋值 </p>
+<p>%= 模后赋值</p>
+<p>#关系运算符</p>
+<p>>大于</p>
+<p>&lt;小于</p>
+<p>&lt;= 小于等于</p>
+<p>>= 大于等于</p>
+<p>== 等于(如果左右两边类型不一致,则隐式转换为一致的类型后再比较)<br> === 等于(如果左右两边类型不一致,则返回false)</p>
+<p>!= 不等于(如果左右两边类型不一致,则隐式转换为一致的类型后再比较) </p>
+<p>!== 不等于(不转换类型,直接比较)</p>
+<p>#逻辑运算符</p>
+<p>&amp;&amp;与 </p>
+<p>||或 </p>
+<p>!非</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//只要其中一个为false就是false</span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">false</span> = <span class="literal">false</span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">true</span> = <span class="literal">true</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="literal">true</span> = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//只要其中一个为true就是true</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">false</span> = <span class="literal">true</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">true</span> = <span class="literal">true</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">true</span> = <span class="literal">true</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">false</span> = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//非true就是false 非flase就是true</span></span><br><span class="line">!<span class="literal">true</span> = <span class="literal">false</span></span><br><span class="line">!<span class="literal">false</span> = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>#元素的获取</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据ID名获取div</span></span><br><span class="line"><span class="keyword">var</span> d1 = <span class="built_in">document</span>.getElementById(<span class="string">'d1'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据name属性获取p</span></span><br><span class="line"><span class="keyword">var</span> p = <span class="built_in">document</span>.getElementsByName(<span class="string">'pp'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据标类名获取a</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'aa'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据标签名获取LI</span></span><br><span class="line"><span class="keyword">var</span> li = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span><br></pre></td></tr></table></figure>
+<p>#onclick事件的绑定<br>我们在浏览网页时,经常会通过点击鼠标来进行一些操作,比如点击登录按钮进行账 号的登录,点击注册按钮进入到一个账号注册页面,我们如何来实现一个点击时间 呢?这里我们就需要用到onclick事件绑定。<br>示例:点击红色div,弹出一个对话框</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据ID名获取DIV</span></span><br><span class="line"><span class="comment">// var div = document.getElementById('d1');</span></span><br><span class="line"><span class="comment">// 根据类名获取DIV</span></span><br><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'d1'</span>)[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span><br><span class="line">	onclick：给DIV加点击事件</span><br><span class="line">	function：函数,是一个方法</span><br><span class="line">*/</span> </span><br><span class="line">div.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="string">"我是DIV"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>#onmouseover、onmouseout事件</p>
+<p>鼠标基本事件除了onclick之外,还有:onmouseover、onmouseout事件。 </p>
+<p>onmouseover表示鼠标移入,在鼠标移入元素时会触发该方法; </p>
+<p>onmouseout表示鼠标移出,在鼠标移出元素时,会触发该方法。</p>
+<p>```javascript<br>    //onmouseover/onmouseout是有BUT的</p>
+<pre><code>// IE8后改为用onmouseenter/onmouseleave
+// onmouseenter:当鼠标移到DIV里面的时候触发的事件
+div.onmouseenter = function () {        
+    div.style.backgroundColor = &quot;blue&quot;;
+    alert(&quot;进来&quot;)
+}
+// onmouseleave:当鼠标移出div的时候触发的事件
+div.onmouseleave = function () {        
+    div.style.backgroundColor = &quot;red&quot;;
+    alert(&quot;出去&quot;)
+}
+</code></pre><p>``</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/24/jsjichu/" data-id="ciold6sz30000u9sc826bt67q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-first" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/23/first/" class="article-date">
+  <time datetime="2016-05-23T07:34:31.000Z" itemprop="datePublished">2016-05-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#你好吗<br><img src="http://macdown.uranusjr.com/static/base/img/logo-160.png" alt="MacDown logo"><br>‘’’css<br>div{<br>width:100px<br>}<br>‘’’</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/23/first/" data-id="ciold56pv0001tgschic0au8p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/23/hello-world/" class="article-date">
+  <time datetime="2016-05-23T07:13:23.000Z" itemprop="datePublished">2016-05-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/23/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/23/hello-world/" data-id="ciojoh5b500009iscoe90c48j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/24/jsjichu/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/23/first/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/23/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
 </body>
 </html>
