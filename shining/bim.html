@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>bim_shining</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/head.css">
+	<link rel="stylesheet" href="css/bim.css">
+</head>
+<body>
+	<div class="wrap">
+		<div class="scrolltop"><img src="img/head/s1.png" alt=""></div>
+		<div class="header">
+			<div class="nav clear">
+				<img class="fl" src="img/head/logo.png" alt="">
+				<div class="nav1 clear fr">
+					<a href="contact.html" class="fr">Contact</a>
+					<a href="bim.html" class="fr">Bim</a>
+					<a href="animate.html" class="fr">3D Animation</a>
+					<a href="rendering.html" class="fr">Rendering</a>
+					<a href="about.html" class="fr">About</a>
+					<a href="index.html" class="fr">Home</a>
+				</div>
+				<div class="nav2 fr">
+					<p></p>
+					<p></p>
+					<p></p>
+					<div>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="rendering.html">Rendering</a></li>
+						<li><a href="animate.html">3D Animation</a></li>
+						<li><a href="bim.html">Bim</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="bim">
+				<div class="floor1">
+					<img class="l1" src="img/bim/l1.png" alt="">
+					<div class="floor1_con">
+						<span><em>1</em>MODEL COMPLETION</span>
+						<p>Establishing and creating the visible and multi-dimension Architecture, Structural and MEP.</p>
+						<img src="img/bim/f11.png" alt="">
+						<img src="img/bim/f12.png" alt="">
+						<img src="img/bim/f13.png" alt="">
+					</div>
+				</div>
+				<div class="floor2">
+					<div class="floor2_con">
+						<span><em>2</em>CLASH DETECTION</span>
+						<p>Completing the clash detection among various design parties,engineers and even different organisations in con struction drawings.</p>
+						<img src="img/bim/f21.png" alt="">
+						<img src="img/bim/f22.png" alt="">
+					</div>
+				</div>
+				<div class="floor3">
+					<img class="l2" src="img/bim/l2.png" alt="">
+					<div class="floor3_con">
+						<span><em>3</em>MEP INTEGRATION</span>
+						<p>Profoundly completing the pipeline integration, design coordination and intra-organisational cooperation between Plumbing, HVAC and Electrical engineering.</p>
+						<img src="img/bim/f31.jpg" alt="">
+						<img src="img/bim/f32.jpg" alt="">
+					</div>
+				</div>
+				<div class="floor4">
+					<img class="l3" src="img/bim/l3.png" alt="">
+					<div class="floor4_con">
+						<span><em>4</em>CURTAIN WALL REMEDYING</span>
+						<p>Creating the abnormity wall based on parametric design tools, and completing detailed curtain wall nodes visibly.</p>
+						<img src="img/bim/f41.png" alt=""><br>
+						<img src="img/bim/f42.png" alt="">
+					</div>
+				</div>
+				<div class="floor5">
+					<div class="floor5_con">
+						<span><em>5</em>BIM CONSULTING</span>
+						<p>To help you to precisely know what is BIM? How BIM use? When and who is suitably to implement BIM?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="email"></div>
+			<div class="foot_nav clear">
+				<p class="f fl"></p>
+				<p class="you fl"></p>
+				<p class="in fl"></p>
+				<p class="t fl"></p>
+			</div>
+			<div class="statement">Copyright © 1998-2015 shining Group</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/chajian.js"></script>
+<script type="text/javascript" src="js/head.js"></script>
+<script type="text/javascript">
+var $wrap = $('.wrap');
+var $scroll = $('.scrolltop');
+var winH = $(window).innerHeight();
+var wrapH = $wrap.height();
+var fheight = $('.floor2').height();
+	scrolltop();
+	$(window).resize(function() {
+		winH = $(window).innerHeight();
+		wrapH = $wrap.height();
+		scrolltop();
+		fheight = $('.floor2').height();
+	})
+	function scrolltop() {
+		if (winH<wrapH) {
+			$scroll.show();
+		}else {
+			$scroll.hide();
+		}
+	}
+	$scroll.on('click',function() {
+		$(window).scrolltopTo(0);
+	})
+	var bol = false;
+	$(window).mousewheel(function(e,down) {
+		var start = $(window).scrollTop();
+		if (bol) {return}
+		bol = true
+		if (down) {
+			if (start%fheight==0) {
+				$(window).scrolltopTo(start+fheight,function() {
+					bol = false;
+				});
+			}else {
+				$(window).scrolltopTo(start+fheight-start%fheight,function() {
+					bol = false;
+				});
+			}
+		}else {
+			if (start%fheight==0) {
+				$(window).scrolltopTo(start-fheight,function() {
+					bol = false;
+				});
+			}else {
+				$(window).scrolltopTo(start-start%fheight,function() {
+					bol = false;
+				});
+			}
+		}
+	})
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

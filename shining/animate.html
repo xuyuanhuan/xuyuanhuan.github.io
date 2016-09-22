@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<title>home_shining</title>
+	<title>animate_shining</title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/head.css">
-	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
 	<div class="wrap">
@@ -38,19 +38,23 @@
 			</div>
 		</div>
 		<div class="content">
-			<div class="home">
-				<a href="rendering.html" class="render clear">
-					<div class="ren_img home_img fl"><img src="img/home/ren2.png" alt=""></div>
-					<div class="ren_txt home_txt fl"><div>Renderings</div><p>Masterplan、Public Building、commercial Building、Residential Building、Landscape Design</p> </div>
-				</a>
-				<a href="bim.html" class="bim clear">
-					<div class="bim_img home_img fr"><img src="img/home/bim2.jpg" alt=""></div>
-					<div class="bim_txt home_txt fr"><div>BIM</div><p>Model Completion、Clash Detection、MEP Integration、Curtain Wall Remedying、BIM Consulting</p> </div>
-				</a>
-				<a href="animate.html" class="animate clear" >
-					<div class="animate_img home_img fl"><img src="img/home/animate2.png" alt=""></div>
-					<div class="home_txt fl"><div>3D ANIMATE</div><p>Real estate advertising animation Design scheme Animation Corporate promotional Animation</p> </div>
-				</a>
+			<div class="animate">
+				<div class="big">
+					<div class="bt"><img src="img/animate/b1.jpg" alt=""></div>
+					<div class="big_b">3D ANIMATE</div>
+					<img class="play" src="img/animate/play.png" alt="">
+				</div>
+				<div class="animate_con clear">
+					<div class="fl"><h3><img class="da" src="img/animate/1.jpg" alt=""><ul><img src="img/animate/s2.png" alt=""></ul></h3><p>Sichuan Province-Commercial Real Estate</p></div>
+					<div class="fl"><h3><img class="da" src="img/animate/2.jpg" alt=""><ul><img src="img/animate/s2.png" alt=""></ul></h3><p>Commercial Real Estate-2014-10</p></div>
+					<div class="fl"><h3><img class="da" src="img/animate/3.jpg" alt=""><ul><img src="img/animate/s2.png" alt=""></ul></h3><p>Huzhou City Commercial Real Estate</p></div>
+					<div class="fl"><h3><img class="da" src="img/animate/4.jpg" alt=""><ul><img src="img/animate/s2.png" alt=""></ul></h3><p>Huzhou City Commercial Real Estate</p></div>
+					<div class="fl"><h3><img class="da" src="img/animate/5.jpg" alt=""><ul><img src="img/animate/s2.png" alt=""></ul></h3><p>Huzhou City Commercial Real Estate</p></div>
+					<div class="fl"><h3><img class="da" src="img/animate/6.jpg" alt=""><ul><img src="img/animate/s2.png" alt=""></ul></h3><p>Commercial Real Estate-2014-10</p></div>
+					<div class="fl"><h3><img class="da" src="img/animate/7.jpg" alt=""><ul><img src="img/animate/s2.png" alt=""></ul></h3><p>Commercial Real Estate-2013-09</p></div>
+					<div class="fl"><h3><img class="da" src="img/animate/8.jpg" alt=""><ul><img src="img/animate/s2.png" alt=""></ul></h3><p>Commercial Real Estate-2013-09</p></div>
+					<div class="fl"><h3><img class="da" src="img/animate/9.jpg" alt=""><ul><img src="img/animate/s2.png" alt=""></ul></h3><p>Qiandao Lake Real Estate</p></div>
+				</div>
 			</div>
 		</div>
 		<div class="footer">
@@ -68,7 +72,9 @@
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="js/chajian.js"></script>
 <script type="text/javascript" src="js/head.js"></script>
-<script type="text/javascript"> 
+<script type="text/javascript">
+var $img = $('.bt img');
+var $h3 = $('h3');
 var $wrap = $('.wrap');
 var $scroll = $('.scrolltop');
 var winH = $(window).innerHeight();
@@ -88,6 +94,11 @@ var wrapH = $wrap.height();
 	}
 	$scroll.on('click',function() {
 		$(window).scrolltopTo(0);
+	})
+	$h3.on('click',function() {
+		$img.attr({
+			src:'img/animate/'+($(this).index('h3')+1)+'.jpg'
+		})
 	})
 </script>
 </html>
