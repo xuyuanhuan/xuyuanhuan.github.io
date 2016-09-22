@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+		<meta charset="utf-8">
+		<title>普乐美 腾飞的18年</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
+		<script type="text/javascript" charset="utf-8" src="js/jq.js"></script>
+		<!--移动端版本兼容 -->
+		<script type="text/javascript">
+			var phoneWidth = parseInt(window.screen.width);
+			var phoneScale = phoneWidth / 640;
+			var ua = navigator.userAgent;
+			if (/Android (\d+\.\d+)/.test(ua)) {
+				var version = parseFloat(RegExp.$1);
+				if (version > 2.3) {
+					document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+				} else {
+					document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+				}
+			} else {
+				document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+			}
+		</script><meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+		<script type="text/javascript">
+			$(function() {
+				var wH = $(window).height();
+				var fix = $(".hFix");
+				if (fix.height() > wH) {
+					var scale = wH / fix.height();
+					fix.height(wH);
+//					$(".wrap>div").css("height",937);
+				} else {
+					fix.css("padding-top", (wH - fix.height()) / 2);
+				}
+//				fix.css("padding-top", (wH - fix.height()) / 2);
+			});
+		</script>
+		<script type="text/javascript">
+			$(function(){
+			 	var open=0;
+		     	$('.yue_btn')[0].src='img/yue.png';
+			    $('.yue_btn').click(function(){
+			        if (open==0) {
+			            $('.yue_btn')[0].src='img/yue2.png';
+			            $("#bgmusic")[0].pause();
+			            $('.yue_btn').removeClass('mrotate');
+			            open=1;
+			        }else if (open==1) {
+			            $('.yue_btn')[0].src='img/yue.png';
+			            $("#bgmusic")[0].play();
+			            $('.yue_btn').addClass('mrotate');
+			            open=0;
+			        }
+			    })
+			});
+		</script>
+	</head>
+
+	<body>
+		<audio id="bgmusic" class="yue" preload="auto" loop="loop">
+		   <source src="music/music.mp3" type="audio/mpeg">
+		</audio>
+		<img src="img/yue.png" class="yue_btn">
+		<div class="loading" style="display: none;">
+			<div class="lb" style="background-position: -854px 0px;"></div>
+			<p>100%</p>
+			<div class="logo">
+				<img src="img/logo.png">
+			</div>
+		</div>
+		<div class="flip">
+			<canvas id="canvas" width="640" height="1138"></canvas>
+		</div>
+		<div class="wrap">
+			
+			<!--流程图-->
+			<div class="flow_layer">
+				<div class="pinch-zoom-container" style="overflow: hidden; position: relative;"><div style="transform-origin: 0% 0% 0px; position: absolute;">
+					<img src="img/closebtn.png" class="closebtn">
+					<img src="img/flow.jpg" class="flowImg">
+				</div></div>
+			</div>
+			<img src="img/arrow.png" id="array">
+			<!--p1-->
+			<div class="page p1 active">
+				<img src="img/xsp.png" class="xsp">
+				<div class="hFix" style="padding-top: 100.5px;">
+					<div class="innerDiv">
+						<div class="ball-scale-multiple">
+				          <div></div>
+				          <div></div>
+				          <div></div>
+				        </div>
+				        <div class="f-title">
+				        	<p>1998-2016</p>
+				        	<p class="font">腾飞的</p>
+				        </div>
+						<img src="img/txt.png" class="title">
+						<img src="img/18-1.png" class="ani18">
+						<img src="img/sp.png" class="sp">
+						<img src="" class="fly">
+						<img src="img/close.png" class="switch">
+						<div class="water">
+							<img src="img/w-1.png" class="aniwater">
+						</div>
+						<p class="logo">
+							<img src="img/logo.png">
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--p2-->
+			<div class="page p2 ">
+				<div class="hFix" style="padding-top: 100.5px;">
+					<div class="innerDiv">
+						<img src="img/txt.png" class="title">
+						<div class="container">
+							<div class="btn"></div>
+							<div class="con">
+								<p class="ani" ani-delay="0.1s" ani-name="fadeInUp">一个初心不改的约定</p>
+								<p class="ani" ani-delay="0.2s" ani-name="fadeInUp">执着于不锈钢厨卫领域，</p>
+								<p class="ani" ani-delay="0.3s" ani-name="fadeInUp">始终以优质304不锈钢为主材，</p>
+								<p class="ani" ani-delay="0.4s" ani-name="fadeInUp">绿色环保，使用寿命更长！</p>
+							</div>
+						</div>
+						<p class="logo">
+							<img src="img/logo.png">
+							<img src="img/icon.png" class="icon">
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--p3-->
+			<div class="page p3 ">
+				<div class="hFix" style="padding-top: 100.5px;">
+					<div class="innerDiv">
+						<img src="img/p3-pic.png" class="p3-pic">
+						<img src="img/txt.png" class="title">
+						<div class="container">
+							<div class="btn"></div>
+							<div class="con">
+								<p class="ani" ani-delay="0.1s" ani-name="fadeInLeft">一段生活与科技的完美邂逅</p>
+								<p class="ani" ani-delay="0.2s" ani-name="fadeInLeft">普乐美坚持科技创新，</p>
+								<p class="ani" ani-delay="0.3s" ani-name="fadeInLeft">节水控水、静音易洁、</p>
+								<p class="ani" ani-delay="0.4s" ani-name="fadeInLeft">安全操控凭绿色科技，</p>
+								<p class="ani" ani-delay="0.5s" ani-name="fadeInLeft">引领全球！</p>
+							</div>
+						</div>
+						<div class="wb"></div>
+						<div class="ws"></div>
+						<p class="logo">
+							<img src="img/icon.png" class="icon">
+							<img src="img/logo.png">
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--p4-->
+			<div class="page p4 ">
+				<div class="hFix" style="padding-top: 100.5px;">
+					<div class="cfang">
+						<div>
+							<div class="cf-btn">
+								厨房
+								<img src="img/s.png" class="s">
+							</div>
+							<div class="cf-show">
+								<img src="img/cf-1.png">
+							</div>
+						</div>
+						<div>
+							<div class="cf-btn">
+								卫浴
+								<img src="img/s.png" class="s">
+							</div>
+							<div class="cf-show">
+								<img src="img/cf-2.png">
+							</div>
+							
+						</div>
+						
+					</div>
+					<div class="innerDiv">
+						<img src="img/txt.png" class="title">
+						<img src="img/p4-pic.jpg" class="p4-pic">
+						<div class="ws-2"></div>
+						<div class="container">
+							<div class="btn"></div>
+							<div class="con">
+								<p class="ani" ani-delay="0.1s" ani-name="fadeIn">一份深耕精品打造的执着，</p>
+								<p class="ani" ani-delay="0.2s" ani-name="fadeIn">专注于不锈钢厨房、卫浴两大产品线，</p>
+								<p class="ani" ani-delay="0.3s" ani-name="fadeIn">因为专注，所以专业。</p>
+							</div>
+						</div>
+						<p class="logo">
+							<img src="img/logo.png">
+							<img src="img/icon.png" class="icon">
+							<img src="img/icon1.png">
+							<img src="img/icon2.png">
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--p5-->
+			<div class="page p5 ">
+				<div class="hFix" style="padding-top: 100.5px;">
+					<div class="innerDiv">
+						<img src="img/txt.png" class="title">
+						<div class="click_tip">
+							<img src="img/click.png" class="click">
+							<p>点击</p>
+						</div>
+						<div class="p5box">
+							<img src="img/p5-1.png" class="p5img p5-1" style="left: 0px; top: 93px; opacity: 1; z-index: 4;">
+							<img src="img/p5-2.png" class="p5img p5-2" style="left: 157px; top: 23px; opacity: 0.4; z-index: 3;">
+							<img src="img/p5-3.png" class="p5img p5-3" style="left: -4px; top: 5px; opacity: 0.2; z-index: 2;">
+							<img src="img/p5-4.png" class="p5img p5-4" style="left: -160px; top: 36px; opacity: 0.4; z-index: 3;">
+						</div>
+						
+						<div class="container">
+							<div class="btn"></div>
+							<div class="con">
+								<p class="ani" ani-delay="0.1s" ani-name="fadeInDown">一场设计美学的荣耀之旅</p>
+								<p class="ani" ani-delay="0.2s" ani-name="fadeInDown">采用东方人体工学设计，</p>
+								<p class="ani" ani-delay="0.3s" ani-name="fadeInDown">回归自然设计美学，</p>
+								<p class="ani" ani-delay="0.4s" ani-name="fadeInDown">成为不锈钢卫浴行业首家</p>
+								<p class="ani" ani-delay="0.5s" ani-name="fadeInDown">荣获德国红点奖的企业。</p>
+							</div>
+						</div>
+						<p class="logo">
+							<img src="img/logo.png">
+							<img src="img/icon.png" class="icon">
+							<img src="img/icon2.png">
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--p6-->
+			<div class="page p6 ">
+				<div class="hFix" style="padding-top: 100.5px;">
+					<div class="innerDiv">
+						<div>
+							<div class="ct sct">
+								<div class="cl p6-1"><img src="img/p6-1.jpg"><div class="layer"></div></div>
+								
+								<div class="p6-2"><img src="img/p6-2.jpg"><div class="layer"></div></div>
+								<img src="img/p6-5.jpg" class="p6-5">
+								<div class="p6-3"><img src="img/p6-3.jpg"><div class="layer"></div></div>
+								<div class="p6-4"><img src="img/p6-4.jpg"><div class="layer"></div></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--p6-->
+			<div class="page p6">
+				<div class="hFix" style="padding-top: 100.5px;">
+					<div class="innerDiv">
+						<div>
+							<div class="ct mct">
+								<div class="mcl m">
+									<img src="img/p6-m-1.jpg">
+									<div class="layer"></div>
+								</div>
+								<div class="m">
+									<img src="img/p6-m-2.jpg">
+									<div class="layer"></div>
+								</div>
+								<div class="p6-m-s m">
+									<div>
+										<img src="img/txt.png">
+										<div class="layer"></div>
+									</div>
+								</div>
+								<div class="m">
+									<img src="img/p6-m-3.jpg">
+									<div class="layer"></div>
+								</div>
+								<div class="m">
+									<img src="img/p6-m-4.jpg">
+									<div class="layer"></div>
+								</div>
+								<div class="m">
+									<img src="img/p6-m-5.jpg">
+									<div class="layer"></div>
+								</div>
+								<div class="p6-m-s a m">
+									<div>
+										<p>品牌系列主题活动，</p>
+										<p>精彩纷呈，多样化的市场</p>
+										<p>活动乐享不停。</p>
+									</div>
+									<div class="layer"></div>
+								</div>
+								<div class="p6-m-s g m">
+									<div class="layer"></div>
+								</div>
+								<div class="p6-m-s b m">
+									<div>
+										<img src="img/logo.png">
+									</div>
+									<div class="layer"></div>
+								</div>
+								<div class="m">
+								<img src="img/p6-m-6.jpg">
+								<div class="layer"></div>
+							</div>							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--p7-->
+			<div class="page p7">
+				<div class="hFix" style="padding-top: 100.5px;">
+					<div class="innerDiv">
+						<img src="img/txt.png" class="title">
+						<div class="qshow">
+							<img src="img/p7-com.png" class="p7com">
+							 <div class="p7txt">
+							 	<div>
+							 		<p class="p7title">普乐美</p>
+								 	<p>携手地产领导品牌，</p>
+								 	<p>走进千家万户。</p>
+								 	<p>全面进驻互联网，</p>
+								 	<p>被更广泛地认识和认可，</p>
+								 	<p>品质卓然，备受青睐！</p>
+							 	</div>
+							 	
+							 </div>
+							<div class="logoshow">
+								<div class="group1">
+									<img src="img/group1-1.png" class="g1-1">
+									<img src="img/group1-2.png" class="g1-2">
+									<img src="img/group1-3.png" class="g1-3">
+									<img src="img/group1-4.png" class="g1-4">
+									<img src="img/group1-5.png" class="g1-5">
+									<img src="img/group1-6.png" class="g1-6">
+									<img src="img/group1-7.png" class="g1-7">
+								</div>
+								<div class="group2">
+									<img src="img/group2-1.png" class="g2-1">
+									<img src="img/group2-2.png" class="g2-2">
+									<img src="img/group2-3.png" class="g2-3">
+									<img src="img/group2-4.png" class="g2-4">
+									<img src="img/group2-5.png" class="g2-5">
+									<img src="img/group2-6.png" class="g2-6">
+									<img src="img/group2-7.png" class="g2-7">
+									<img src="img/group2-8.png" class="g2-8">
+								</div>
+								<div class="group3">
+									<img src="img/group3-1.png" class="g3-1">
+									<img src="img/group3-2.png" class="g3-2">
+									<img src="img/group3-3.png" class="g3-3">
+									<img src="img/group3-4.png" class="g3-4">
+									<img src="img/group3-5.png" class="g3-5">
+									<img src="img/group3-6.png" class="g3-6">
+									<img src="img/group3-7.png" class="g3-7">
+									<img src="img/group3-8.png" class="g3-8">
+									<img src="img/group3-9.png" class="g3-9">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--p8-->
+			<div class="page p8">
+				<div class="hFix" style="padding-top: 100.5px;">
+					<div class="innerDiv">
+						<img src="img/txt.png" class="title">
+						<img src="img/word.png" class="word">
+						<img src="img/nonius.png" class="nonius1">
+						<img src="img/p10-1.png" class="p10-img">
+						<div class="container">
+							<div class="btn"></div>
+							<div class="con">
+								<p class="ani" ani-delay="0.5s" ani-name="fadeIn">普乐美产品畅销全球</p>
+								<p class="ani" ani-delay="0.5s" ani-name="fadeIn">遍布欧洲、大洋洲、东南亚等地</p>
+								<p class="ani" ani-delay="0.5s" ani-name="fadeIn">拥有普乐美（美国）公司</p>
+								<p class="ani" ani-delay="0.5s" ani-name="fadeIn">普乐美（北欧）公司</p>
+								<p class="ani" ani-delay="0.5s" ani-name="fadeIn">普乐美（马来西亚）公司</p>
+								<p class="ani" ani-delay="0.5s" ani-name="fadeIn">普乐美（南美）公司、普乐美（香港）公司</p>
+								
+								<img src="img/logo.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--p8-->
+			<div class="page p8-1">
+				<div class="hFix" style="padding-top: 100.5px;">
+					<div class="innerDiv">
+						<img src="img/txt.png" class="title">
+						<img src="img/map.png" class="map">
+						<img src="img/word.png" class="bgword">
+						<img src="img/nonius.png" class="nonius2">
+						<img src="img/p9-1.png" class="p9-3">
+						<div class="container">
+							<div class="btn"></div>
+							<div class="con">
+								<p class="ani" ani-delay="0.5s" ani-name="fadeIn">普乐美一直在展翅高飞</p>
+								<p class="ani" ani-delay="0.5s" ani-name="fadeIn">凭借国际化的水准，</p>
+								<p class="ani" ani-delay="0.5s" ani-name="fadeIn">与红星美凯龙、居然之家、欧亚达、</p>
+								<p class="ani" ani-delay="0.5s" ani-name="fadeIn">喜盈门等全国大型卖场建立战略合作，</p>
+								<p class="ani" ani-delay="0.5s" ani-name="fadeIn">专卖店数量已超过2000家，</p>
+								<p class="ani" ani-delay="0.5s" ani-name="fadeIn">各类品牌专区近万个！</p>
+								
+								<img src="img/logo.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--p9-->
+			<div class="page p9">
+				<div class="hFix" style="padding-top: 100.5px;">
+					<div class="innerDiv">
+						<img src="img/txt.png" class="title">
+						<div class="container">
+							<div class="con">
+								<p>普乐美</p>
+								<p>招商现已全面开启！</p>
+								<p>前进的路途中，</p>
+								<p>我们诚邀您并肩同行！</p>
+								<img src="img/logo.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--p10 表单、分享-->
+			<div class="page p10 ">
+				<div class="submit_layer">
+					<div class="tipbox">
+						<img src="img/logo.png">
+						<img src="img/tip.png" class="t-tip">
+						
+						<div class="share_btn">
+							关闭
+						</div>
+					</div>
+				</div>
+				
+				<div class="hFix" style="padding-top: 100.5px;">
+					<div class="innerDiv">
+						<!--左侧框-->
+						<div class="floatR">
+							<a class="flow">加盟流程</a>
+							<a href="http://mp.weixin.qq.com/s?__biz=MzA3Njc5OTYzOA==&amp;mid=502744212&amp;idx=1&amp;sn=f306745f1115656f14a8043aa050152f&amp;scene=0&amp;previewkey=12UtU7nqMlXXoLrwf55YhMwqSljwj2bfCUaCyDofEow%3D#wechat_redirect">加盟政策</a>
+						</div>
+						<img src="img/txt.png" class="title">
+						<div class="form-box">
+							<img src="img/txt1.png" class="txt1">
+							<div class="form">
+								<div class="line">
+									<i class="picon"></i>
+									<input type="text" name="username" id="name" placeholder="姓       名">
+								</div>
+								<div class="line">
+									<i class="dicon"></i>
+									<input type="tel" name="username" id="tel" placeholder="联系电话">
+								</div>
+								<div class="line">
+									<i class="zicon"></i>
+									<div class="location">
+										<div class="sheng">
+											<i class="sj"></i>
+											<select id="province">
+												<option value="">选择省份</option>
+											<option value="北京市">北京市</option><option value="天津市">天津市</option><option value="上海市">上海市</option><option value="重庆市">重庆市</option><option value="广东省">广东省</option><option value="河北省">河北省</option><option value="山西省">山西省</option><option value="辽宁省">辽宁省</option><option value="吉林省">吉林省</option><option value="黑龙江省">黑龙江省</option><option value="江苏省">江苏省</option><option value="浙江省">浙江省</option><option value="安徽省">安徽省</option><option value="江西省">江西省</option><option value="山东省">山东省</option><option value="河南省">河南省</option><option value="湖北省">湖北省</option><option value="湖南省">湖南省</option><option value="海南省">海南省</option><option value="四川省">四川省</option><option value="贵州省">贵州省</option><option value="云南省">云南省</option><option value="陕西省">陕西省</option><option value="甘肃省">甘肃省</option><option value="青海省">青海省</option><option value="台湾省">台湾省</option><option value="香港">香港</option><option value="澳门">澳门</option><option value="西藏">西藏</option><option value="广西省">广西省</option><option value="福建省">福建省</option><option value="内蒙古">内蒙古</option><option value="宁夏">宁夏</option><option value="新疆">新疆</option></select>
+										</div>
+										<div class="city">
+											<i class="sj"></i>
+											<select id="city">
+												<option value="">城 市</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="line">
+									<i class="sicon"></i>
+									<div class="join">
+										<i class="sj"></i>
+										<select id="source">
+											<option value="">加盟渠道</option>
+											<option value="实体经销商">实体经销商</option>
+											<option value="电商经销商">电商经销商</option>
+											<option value="工程代理商">工程代理商</option>
+											<option value="家装代理商">家装代理商</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<button id="submit" value="提交" class="submit">提交</button>
+						</div>
+						<div class="way-box">
+							<img src="img/txt3.png">
+							<div class="waybg">
+								<div class="waymess">
+									<div class="way_move">
+										<a href="tel:13702335568">华中大区    邹经理   13702335568</a>
+										<a href="tel:13928098520" class="default">华北大区    齐经理    13928098520</a>
+										<a href="tel:13928090520">华东大区    易经理   13928090520</a>
+										<a href="tel:13928082910">华南大区    谭经理   13928082910</a>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<p class="logo">
+							<img src="img/logo.png">
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--p11-->
+			<div class="page p11">
+				<div class="share_layer">
+					<img src="img/jt.png" class="jt">
+					<div class="shareTxt">
+						<div>
+							<img src="img/txt4.png">
+							<p class="desc">让美在世界流淌！</p>
+							<p class="desc">期待您的加入！</p>
+							<div class="code">
+								<img src="img/code.png">
+							</div>
+							<div class="hottel">
+								<img src="img/logo.png">
+								<p>全国统一服务热线</p>
+								<p>
+									<i class="tel"></i>
+									<a href="tel:400-8877-322"><img src="img/num.png" class="num"></a>
+									</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cache">
+			<img src="img/loading.png">
+			<img src="img/logo.png">
+			<img src="img/p1.jpg">
+			<img src="img/btn.png">
+			<img src="img/cf-1.png">
+			<img src="img/cf-2.png">
+			<img src="img/code.jpg">
+			<img src="img/group1-1.png">
+			<img src="img/group1-2.png">
+			<img src="img/group1-3.png">
+			<img src="img/group1-4.png">
+			<img src="img/group1-5.png">
+			<img src="img/group1-6.png">
+			<img src="img/group1-7.png">
+			<img src="img/group2-1.png">
+			<img src="img/group2-2.png">
+			<img src="img/group2-3.png">
+			<img src="img/group2-4.png">
+			<img src="img/group2-5.png">
+			<img src="img/group2-6.png">
+			<img src="img/group2-7.png">
+			<img src="img/group2-8.png">
+			<img src="img/group3-1.png">
+			<img src="img/group3-2.png">
+			<img src="img/group3-3.png">
+			<img src="img/group3-4.png">
+			<img src="img/group3-5.png">
+			<img src="img/group3-6.png">
+			<img src="img/group3-7.png">
+			<img src="img/group3-8.png">
+			<img src="img/group3-9.png">
+			<img src="img/map.png">
+			<img src="img/word.png">
+			<img src="img/p3-pic.png">
+			<img src="img/p6-1.jpg">
+			<img src="img/p6-2.jpg">
+			<img src="img/p6-3.jpg">
+			<img src="img/p6-4.jpg">
+			<img src="img/p6-m-1.jpg">
+			<img src="img/p6-m-2.jpg">
+			<img src="img/p6-m-3.jpg">
+			<img src="img/p6-m-4.jpg">
+			<img src="img/p6-m-5.jpg">
+			<img src="img/p6-m-6.jpg">
+			<img src="img/flow.jpg">
+		</div>
+		<style type="text/css">
+    .meng00{display:none;z-index:9999;width: 100%;height: 100%;position: fixed;left: 0;top:0;background:url('img/15.gif') center center no-repeat rgba(0,0,0,0.8);}
+</style>
+		<div class="meng00"></div>
+		<div style="display:none"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258858412'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258858412' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1258858412"><a href="http://www.cnzz.com/stat/website.php?web_id=1258858412" target="_blank" title="站长统计">站长统计</a></span><script src=" http://s4.cnzz.com/z_stat.php?id=1258858412" type="text/javascript"></script><script src="http://c.cnzz.com/core.php?web_id=1258858412&amp;t=z" charset="utf-8" type="text/javascript"></script></div>
+	
+	
+	<script type="text/javascript" charset="utf-8" src="js/underscore.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/pinchzoom.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/loading.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/hubble.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/project.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/animation_1.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/animation_2.js"></script>	
+	<script type="text/javascript" charset="utf-8" src="js/select.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//省市联动
+			var oProvince=document.getElementById("province");
+			var oCity=document.getElementById("city");
+			var tmp=0;
+			for(var i in json){
+				var option=document.createElement("option");
+				option.innerHTML=i;
+				option.value=i;
+				oProvince.appendChild(option);
+			}
+			oProvince.onchange=function(){
+			oCity.innerHTML="<option value=''>选择城市</option>";
+			for(var i in json[oProvince.value]){
+					var option=document.createElement("option");
+					option.innerHTML=json[oProvince.value][i];
+					option.value=json[oProvince.value][i];
+					oCity.appendChild(option);
+				}
+			}
+
+			$('#submit').click(function(){
+		        var name=$.trim($('#name').val());
+		        var tel=$.trim($('#tel').val());
+		        var province=$('#province').val();
+		        var city=$('#city').val();
+		        var source=$('#source').val();
+		        if(name){
+		            //判断姓名格式
+		            if(!(/^[a-zA-Z]{3,8}$|^[a-zA-Z\u4e00-\u9fa5]{2,4}$/.test(name))){
+		              	alert('姓名字数应在2到4个汉字或3到8个英文之间');
+		              	return false;
+		            }
+		        }else{
+		            alert("请输入您的姓名");
+		            return false;
+		        }
+		        if(tel){
+		            //判断手机格式
+		            if(!(/^1[3|4|5|7|8][0-9]\d{8,8}$/.test(tel))){ 
+		                alert('手机号格式不对');
+		                return false;
+		            }
+		        }else{
+		            alert("请输入您的手机号码");
+		            return false;
+		        }
+		        if(!province){
+					alert("请选择省份");
+					return false;
+				}
+		        if(!city){
+					alert("请选择城市");
+					return false;
+		        }
+		        if(!source){
+					alert("请选择招商渠道");
+					return false;
+		        }
+		        var arr=[name,tel,province,city,source];
+		        var info=arr.join("|||");//将数组转换为字符串，传给后台记录
+		        $('.meng00').show();
+		        $.ajax({
+		          	type: "post",
+		           	timeout:10000,//设置超时时间为10秒
+	               	url: "phphandle/record.php",
+	               	data: {info:info},
+	               	dataType: "text",
+	               	cache:false,
+	               	success:function(data){
+	                   	$('.meng00').hide();
+	                   	if(data=='s'){
+	                      	$(".submit_layer").show();
+	                      	$("#submit").attr("disabled",true).text("已提交").css("background-color","grey");
+	                   	}else if(data=='isTel'){
+	                        alert("您今天已经登记过啦");
+	                        return false;
+	                   	}else{
+	                        alert("服务器繁忙");
+	                        return false;
+	                   	}		                   
+		            },
+	               	error:function(XMLHttpRequest, Status){//ajax请求结束
+	                   	$('.meng00').hide();
+	                   	if(Status=='timeout'){//请求超时
+	                       alert("您的网络貌似不太行哦！再试试？");
+	                       return false;
+	                   	}
+	               	}
+		        });
+			});
+
+			$(".share_btn").click(function(){
+				$(".submit_layer").hide();
+			});
+		});
+	</script>
+	
+<div style="display: none;">
+	
+
+</div>
+
+﻿<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+  /*
+   * 注意：
+   * 1. 所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+   * 2. 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+   * 3. 常见问题及完整 JS-SDK 文档地址：http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html
+   *
+   * 开发中遇到问题详见文档“附录5-常见错误及解决办法”解决，如仍未能解决可通过以下渠道反馈：
+   * 邮箱地址：weixin-open@qq.com
+   * 邮件主题：【微信JS-SDK反馈】具体问题
+   * 邮件内容说明：用简明的语言描述问题所在，并交代清楚遇到该问题的场景，可附上截屏图片，微信团队会尽快处理你的反馈。
+   */
+
+	//定义分享的文案,链接及图片
+	var shareTitle="腾飞18年 普乐美全球招商";
+	var shareDesc="国际不锈钢厨卫专家 Primy诚邀加盟！来一睹我们的国际范！";
+	var shareLink="http://custom.yangyue.com.cn/wechat/primy/merchants/index.php";
+    var shareimg="http://custom.yangyue.com.cn/wechat/primy/merchants/img/shareimg.jpg";
+  wx.config({
+     //debug: true,
+    appId: 'wx17475843bef17ea6',
+    timestamp: 1474335321,
+    nonceStr: 'Poa29t92iq5zJaVj',
+    signature: 'cf359ece28bde9837880e8f4dbef872e510f4dbc',
+    jsApiList: [
+      // 所有要调用的 API 都要加到这个列表中
+                'checkJsApi',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo',
+                'hideMenuItems',
+                'showMenuItems',
+                'hideAllNonBaseMenuItem',
+                'showAllNonBaseMenuItem',
+                'translateVoice',
+                'startRecord',
+                'stopRecord',
+                'onRecordEnd',
+                'playVoice',
+                'pauseVoice',
+                'stopVoice',
+                'uploadVoice',
+                'downloadVoice',
+                'chooseImage',
+                'previewImage',
+                'uploadImage',
+                'downloadImage',
+                'getNetworkType',
+                'openLocation',
+                'getLocation',
+                'hideOptionMenu',
+                'showOptionMenu',
+                'closeWindow',
+                'scanQRCode',
+                'chooseWXPay',
+                'openProductSpecificView',
+                'addCard',
+                'chooseCard',
+                'openCard' 
+    ]
+  });
+  wx.ready(function () {
+    // 在这里调用 API
+    // 2. 分享接口
+    // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    //document.querySelector('#onMenuShareAppMessage').onclick = function () {
+ 	share();
+  });
+
+
+function share(){
+    wx.onMenuShareAppMessage({
+        title: shareTitle,
+        desc: shareDesc,
+        link: shareLink ,
+        imgUrl: shareimg,
+        trigger: function (res) {
+         // alert('用户点击发送给朋友');
+        },
+        success: function (res) {
+          $.ajax({
+            url:"phphandle/record.php",
+            data:{isShare:1},
+            type:"post"
+          });
+        },
+        cancel: function (res) {
+
+        },
+        fail: function (res) {
+          //alert(JSON.stringify(res));
+        }
+      });
+      //alert('已注册获取“发送给朋友”状态事件');
+    //};
+
+	//分享到朋友圈
+      wx.onMenuShareTimeline({
+        title: shareDesc,
+        link: shareLink ,
+        imgUrl: shareimg,
+          trigger: function (res) {
+        	  //alert('分享成功');
+            //alert('用户点击分享到朋友圈');
+          },
+          success: function (res) {
+              $.ajax({
+                url:"phphandle/record.php",
+                data:{isShare:2},
+                type:"post"
+            });
+                     },
+          cancel: function (res) {
+            //alert('已取消');
+          },
+          fail: function (res) {
+            //alert(JSON.stringify(res));
+          }
+          
+        }); 
+}
+
+  
+</script></body></html>
