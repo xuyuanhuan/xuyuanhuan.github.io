@@ -1,0 +1,194 @@
+.header .nav .nav1 a:nth-child(1){
+    width: 84px;
+    color: white;
+    border: 1px solid #7b7b7b;
+}
+.header .nav .nav1 a:nth-child(2){
+    width: 50px;
+}
+.header .nav .nav1 a:nth-child(3){
+    width: 111px;
+}
+.header .nav .nav1 a:nth-child(4){
+    width: 106px;
+}
+.header .nav .nav1 a:nth-child(5){
+    width: 76px;
+}
+.header .nav .nav1 a:nth-child(6){
+    width: 65px;
+}
+.contact{
+    width: 100%;
+    position: relative;
+    padding-top: 130px;
+    height: 450px;
+    background: url(../img/contact/b1.png) right no-repeat;
+    background-color: #f5f5f5;
+}
+.contact .back{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.contact .top{
+    width: 150px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    margin: 0 auto 15px auto;
+}
+.contact .top span{
+    font-weight: bold;
+}
+.contact .top em{
+    color: #666666;
+    font-size: 14px;
+}
+.contact .middle span{
+    padding-left: 50px;
+    font-weight: bold;
+    background: url(../img/contact/email.png) no-repeat;
+}
+.contact .middle em{
+    color: #666666;
+    font-size: 14px;
+}
+.contact .middle{
+    width: 255px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 18px;
+    margin: 0 auto 25px auto;
+}
+.contact .bottom{
+    width: 735px;
+    height: 40px;
+    line-height: 20px;
+    text-align: left;
+    font-size: 12px;
+    color: #666666;
+    margin: auto;
+}
+.contact .bottom span{
+    display: inline-block;
+    height: 40px;
+    padding-left: 40px;
+    background: url(../img/contact/tele.png) no-repeat;
+}
+.contact .bottom em{
+    display: inline-block;
+    height: 40px;
+    line-height: 60px;
+    margin: 0 50px 0;
+    padding-left: 30px;
+    background: url(../img/contact/phone.png) no-repeat;
+}
+.contact .bottom var{
+    display: inline-block;
+    width: 300px;
+    height: 40px;
+    padding-left: 30px;
+    background: url(../img/contact/add.png) no-repeat;
+}
+.footer{
+    height: 125px;
+    width: 100%;
+    padding-top: 66px;
+}
+.footer .email{
+    width: 35px;
+    height: 26px;
+    margin: 0 auto 19px auto;
+    background: url(../img/footer/email1.png);
+}
+.footer .email:hover{
+    background: url(../img/footer/email2.png);
+}
+.footer .foot_nav{
+    width: 148px;
+    height: 25px;
+    margin: auto;
+}
+.footer .foot_nav p{
+    width: 25px;
+    height: 25px;
+    margin-right: 16px;
+}
+.footer .foot_nav .f{
+    background: url(../img/footer/f1.png);
+}
+.footer .foot_nav .f:hover{
+    background: url(../img/footer/f2.png);
+}
+.footer .foot_nav .you{
+    background: url(../img/footer/you1.png);
+}
+.footer .foot_nav .you:hover{
+    background: url(../img/footer/you2.png);
+}
+.footer .foot_nav .in{
+    background: url(../img/footer/in1.png);
+}
+.footer .foot_nav .in:hover{
+    background: url(../img/footer/in2.png);
+}
+.footer .foot_nav .t{
+    margin: 0;
+    background: url(../img/footer/t1.png);
+}
+.footer .foot_nav .t:hover{
+    background: url(../img/footer/t2.png);
+}
+.footer .statement{
+    width: 240px;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    color: #707070;
+}
+@media screen and (min-width: 640px) and (max-width: 960px){
+    .header .nav{
+        width: 100%;
+    }
+    .header .nav .nav1{
+        display: none;
+    }
+    .header .nav .nav2{
+        display: block;
+    }
+    .contact .bottom{
+        width: 260px;
+    }
+    .contact .bottom em{
+        margin: 20px 0;
+    }
+    .contact .bottom var{
+        width: 260px;
+    }
+}
+@media screen and (max-width: 640px){
+    .header .nav{
+        width: 100%;
+    }
+    .header .nav .nav1{
+        display: none;
+    }
+    .header .nav .nav2{
+        display: block;
+    }
+    .contact .bottom{
+        width: 260px;
+    }
+    .contact .bottom em{
+        margin: 20px 0;
+    }
+    .contact .bottom var{
+        width: 260px;
+    }
+}
+
+
+
+
+
+

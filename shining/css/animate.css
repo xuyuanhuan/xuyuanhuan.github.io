@@ -1,0 +1,217 @@
+.header .nav .nav1 a:nth-child(1){
+    width: 84px;
+}
+.header .nav .nav1 a:nth-child(2){
+    width: 50px;
+}
+.header .nav .nav1 a:nth-child(3){
+    width: 111px;
+    color: white;
+    border: 1px solid #7b7b7b;
+}
+.header .nav .nav1 a:nth-child(4){
+    width: 106px;
+}
+.header .nav .nav1 a:nth-child(5){
+    width: 76px;
+}
+.header .nav .nav1 a:nth-child(6){
+    width: 65px;
+}
+.animate .big{
+    width: 100%;
+    background: #1b1b1b;
+    position: relative;
+}
+.animate .big .bt{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+.animate .big .bt img{
+    width: 100%;
+}
+.animate .big .big_b{
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    font-size: 24px;
+    line-height: 60px;
+    letter-spacing: 0.1em;
+}
+.animate .big .play{
+    width: 5%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.animate .animate_con{
+    width: 90%;
+    margin: 30px auto;
+}
+.animate .animate_con div{
+    width: 32%;
+    min-width: 120px;
+}
+.animate .animate_con div:nth-child(3n+2){
+    margin: 0 2%;
+}
+.animate .animate_con h3{
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.animate .animate_con h3 .da{
+    width: 100%;
+}
+.animate .animate_con h3 ul{
+    position: absolute;
+    left: 45%;
+    top: 45%;
+    width: 10%;
+    background: url(../img/animate/s2.png) no-repeat;
+    background-size: 100% auto;
+}
+.animate .animate_con h3:hover ul{
+    background: url(../img/animate/s1.png) no-repeat;
+}
+.animate .animate_con h3 ul img{
+    width: 100%;
+    opacity: 0;
+}
+.animate .animate_con p{
+    width: 90%;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #909090;
+}
+.footer{
+    height: 125px;
+    width: 100%;
+    padding-top: 66px;
+}
+.footer .email{
+    width: 35px;
+    height: 26px;
+    margin: 0 auto 19px auto;
+    background: url(../img/footer/email1.png);
+}
+.footer .email:hover{
+    background: url(../img/footer/email2.png);
+}
+.footer .foot_nav{
+    width: 148px;
+    height: 25px;
+    margin: auto;
+}
+.footer .foot_nav p{
+    width: 25px;
+    height: 25px;
+    margin-right: 16px;
+}
+.footer .foot_nav .f{
+    background: url(../img/footer/f1.png);
+}
+.footer .foot_nav .f:hover{
+    background: url(../img/footer/f2.png);
+}
+.footer .foot_nav .you{
+    background: url(../img/footer/you1.png);
+}
+.footer .foot_nav .you:hover{
+    background: url(../img/footer/you2.png);
+}
+.footer .foot_nav .in{
+    background: url(../img/footer/in1.png);
+}
+.footer .foot_nav .in:hover{
+    background: url(../img/footer/in2.png);
+}
+.footer .foot_nav .t{
+    margin: 0;
+    background: url(../img/footer/t1.png);
+}
+.footer .foot_nav .t:hover{
+    background: url(../img/footer/t2.png);
+}
+.footer .statement{
+    width: 240px;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    color: #707070;
+}
+@media screen and (max-width: 1050px){
+    .animate .animate_con div{
+        width: 49%;
+    }
+    .animate .animate_con div:nth-child(3n+2){
+        margin: 0;
+    }
+    .animate .animate_con div:nth-child(2n-1){
+        margin-right: 2%;
+    }
+}
+@media screen and (min-width: 640px) and (max-width: 960px){
+    .header .nav{
+        width: 100%;
+    }
+    .header .nav .nav1{
+        display: none;
+    }
+    .header .nav .nav2{
+        display: block;
+    }
+    .animate .animate_con div{
+        width: 49%;
+    }
+    .animate .animate_con div:nth-child(3n+2){
+        margin: 0;
+    }
+    .animate .animate_con div:nth-child(2n-1){
+        margin-right: 2%;
+    }
+    .animate .animate_con p{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 640px){
+    .header .nav{
+        width: 100%;
+    }
+    .header .nav .nav1{
+        display: none;
+    }
+    .header .nav .nav2{
+        display: block;
+    }
+    .animate .animate_con div{
+        width: 49%;
+    }
+    .animate .animate_con div:nth-child(3n+2){
+        margin: 0;
+    }
+    .animate .animate_con div:nth-child(2n-1){
+        margin-right: 2%;
+    }
+    .animate .animate_con p{
+        height: 40px;
+        line-height: 20px;
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+

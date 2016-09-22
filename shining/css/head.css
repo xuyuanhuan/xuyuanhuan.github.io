@@ -1,0 +1,80 @@
+.wrap{
+    width: 100%;
+    font-size: 12px;
+}
+.scrolltop{
+    width: 30px;
+    height: 23px;
+    border-radius: 5px;
+    z-index: 9;
+    position: fixed;
+    right: 0px;
+    bottom: 20px;
+}
+.scrolltop img{
+    width: 100%;
+}
+.content{
+    width: 100%;
+}
+.header{
+    width: 100%;
+    background: #1b1b1b;
+    height: 69px;
+}
+.header .nav{
+    width: 960px;
+    margin: 0 auto;
+    position: relative; 
+    top: 19px; 
+}
+.heaedr .nav .nav1{
+    width: 800px;
+    height: 28px;  
+}
+.header .nav .nav1 a{
+    display: inline-block;
+    height: 28px;
+    color: #a1a1a1;   
+    font-size: 14px;
+    margin-left: 30px;
+    border-radius: 5px;
+    border: 1px solid #1b1b1b;
+    text-align: center;
+    line-height: 28px; 
+}
+.header .nav .nav1 a:hover{
+    color: white;
+    border: 1px solid #7b7b7b;
+}
+.header .nav .nav2{
+    width: 0.3rem;
+    height: 0.3rem;
+    margin-right: 0.3rem;
+    position: relative;
+    display: none;
+    z-index: 9;
+}
+.header .nav .nav2 p{
+    width: 0.26rem;
+    border: 0.02rem solid #d2db4a;
+    margin-bottom: 0.08rem;
+}
+.header .nav .nav2 div{
+    display: none;
+    position: absolute;
+    border-radius: 0.05rem;
+    right: -0.3rem;
+    top: 0.3rem;
+    width: 0.9rem;
+    background: #1b1b1b;
+    text-align: center;
+}
+.header .nav .nav2 div a{
+    color: #a1a1a1;   
+    font-size: 0.14rem;
+    line-height: 0.3rem; 
+}
+.header .nav .nav2 div a:hover{
+    color: #ffffff;
+}

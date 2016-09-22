@@ -1,0 +1,207 @@
+.header .nav .nav1 a:nth-child(1){
+    width: 84px;
+}
+.header .nav .nav1 a:nth-child(2){
+    width: 50px;
+}
+.header .nav .nav1 a:nth-child(3){
+    width: 111px;
+}
+.header .nav .nav1 a:nth-child(4){
+    width: 106px;
+}
+.header .nav .nav1 a:nth-child(5){
+    width: 76px;
+}
+.header .nav .nav1 a:nth-child(6){
+    width: 65px;
+    color: white;
+    border: 1px solid #7b7b7b;
+}
+.home{
+    margin: auto;
+    width: 960px;
+}
+.home a{
+    display: block;
+}
+.home .render{
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+}
+.home .render:hover .ren_img{
+    background: url(../img/home/ren1.png) right;
+    background-size: 100% auto;
+    border-right: 21px solid #cfdb00;
+}
+.home .home_img{
+    width: 660px;
+    border-right: 21px solid #e1e1e1;
+}
+.home .render .ren_img{
+    background: url(../img/home/ren2.png) right ;
+    background-size: 100% auto;
+}
+.home img{
+    width: 100%;
+    opacity: 0;
+}
+.home .home_txt{
+    width: 210px;
+    padding: 10px 0 0 15px; 
+}
+.home .home_txt div{
+    line-height: 68px;
+    font-size: 28px;
+    color: #3c3c3c;
+}
+.home .home_txt p{
+    line-height: 20px;
+    font-size: 16px;
+    color: #595757;
+}
+.home .bim{
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+}
+.home .bim:hover .bim_img{
+    background: url(../img/home/bim1.jpg) no-repeat;
+    background-size: 100% auto;
+    border-left: 21px solid #cfdb00;
+}
+.home .bim .bim_img{
+    background: url(../img/home/bim2.jpg) no-repeat ;
+    background-size: 100% auto;
+    border-left: 21px solid #e1e1e1;
+    border-right: 0;
+}
+.home .bim_txt{
+    text-align: right; 
+    padding: 10px 15px 0 0; 
+}
+.home .animate{
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+}
+.home .animate:hover .animate_img{
+    background: url(../img/home/animate2.png) no-repeat right;
+    background-size: 100% auto;
+    border-right: 21px solid #cfdb00;
+}
+.home .animate .animate_img{
+    background: url(../img/home/animate1.png) no-repeat right;
+    background-size: 100% auto;
+    border-right: 21px solid #e1e1e1;
+}
+.footer{
+    height: 125px;
+    width: 100%;
+    padding-top: 66px;
+}
+.footer .email{
+    width: 35px;
+    height: 26px;
+    margin: 0 auto 19px auto;
+    background: url(../img/footer/email1.png);
+}
+.footer .email:hover{
+    background: url(../img/footer/email2.png);
+}
+.footer .foot_nav{
+    width: 148px;
+    height: 25px;
+    margin: auto;
+}
+.footer .foot_nav p{
+    width: 25px;
+    height: 25px;
+    margin-right: 16px;
+}
+.footer .foot_nav .f{
+    background: url(../img/footer/f1.png);
+}
+.footer .foot_nav .f:hover{
+    background: url(../img/footer/f2.png);
+}
+.footer .foot_nav .you{
+    background: url(../img/footer/you1.png);
+}
+.footer .foot_nav .you:hover{
+    background: url(../img/footer/you2.png);
+}
+.footer .foot_nav .in{
+    background: url(../img/footer/in1.png);
+}
+.footer .foot_nav .in:hover{
+    background: url(../img/footer/in2.png);
+}
+.footer .foot_nav .t{
+    margin: 0;
+    background: url(../img/footer/t1.png);
+}
+.footer .foot_nav .t:hover{
+    background: url(../img/footer/t2.png);
+}
+.footer .statement{
+    width: 240px;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    color: #707070;
+}
+@media screen and (max-width: 960px){
+    .header .nav{
+        width: 100%;
+    }
+    .header .nav .nav1{
+        display: none;
+    }
+    .header .nav .nav2{
+        display: block;
+    }
+    .home{
+        width: 95%;
+    }
+    .home .render,.home .bim,.home .animate{
+        width: 100%;
+    }
+    .home .home_img{
+        width: 100%;
+        border: 0;
+    }
+    .home .render:hover .ren_img{
+        border-right: 0;
+    }
+    .home .bim:hover .bim_img{
+        border-left: 0;
+    }
+    .home .bim .bim_img{
+        border-left: 0;
+    }
+    .home .animate:hover .animate_img{
+        border-right: 0;
+    }
+    .home .animate .animate_img{
+        border-right: 0;
+    }
+    .home .home_txt{
+        width: 100%;
+        text-align: left;
+    }
+    .home .bim_txt{
+        padding: 10px 0 0 15px; 
+    }
+    .home .home_txt div{
+        line-height: 30px;
+        margin: auto;
+        text-align: center;
+    }
+    .home .home_txt p{
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
