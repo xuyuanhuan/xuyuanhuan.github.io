@@ -45,16 +45,17 @@ function show(m) {
 	$tab_img.eq(m).css({zIndex:1});
 	$fenye.eq(m).css({background:'yellow'});
 	step()
-	function step() {
+	function  step() {
 		a++;
-		if (a>=150) {
+		if (a>=50) {
 			cancelAnimationFrame(id);
 			bol = false;
 			hua_bol = true;
 		}
-		$tab_img.eq(m).css({opacity:a/150});
-		id = requestAnimationFrame(step);
+		$tab_img.eq(m).css({opacity:a/50});
+		d = requestAnimationFrame(step);
 	}
+	var timer = setInterval(function() {
 }
 var n = 0;
 $tab.get(0).addEventListener("touchstart",function(e) {
