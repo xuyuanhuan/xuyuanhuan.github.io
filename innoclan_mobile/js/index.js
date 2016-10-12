@@ -55,7 +55,6 @@ function show(m) {
 		$tab_img.eq(m).css({opacity:a/50});
 		d = requestAnimationFrame(step);
 	}
-	var timer = setInterval(function() {
 }
 var n = 0;
 $tab.get(0).addEventListener("touchstart",function(e) {
