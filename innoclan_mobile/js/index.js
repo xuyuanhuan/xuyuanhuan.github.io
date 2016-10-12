@@ -46,12 +46,12 @@ function show(m) {
 	$fenye.eq(m).css({background:'yellow'});
 	var timer = setInterval(function() {
 		a++;
-		if (a>=150) {
+		if (a>=80) {
 			clearInterval(timer);
 			bol = false;
 			hua_bol = true;
 		}
-		$tab_img.eq(m).css({opacity:a/150});
+		$tab_img.eq(m).css({opacity:a/80});
 	},10);
 }
 var n = 0;
@@ -85,7 +85,7 @@ setInterval(function() {
 	if (n>len-1) {n=0};
 	show(n);
 	before = n;
-},5000);
+},3000);
 var img_src = ['images/index/xiala1.jpg','images/index/xiala2.jpg','images/index/xiala3.jpg','images/index/xiala4.jpg','images/index/xiala1.jpg','images/index/xiala2.jpg','images/index/xiala3.jpg','images/index/xiala4.jpg'];
 var loading = document.getElementById('loading');
 var xiala = document.getElementById('xiala');
