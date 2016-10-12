@@ -47,12 +47,12 @@ function show(m) {
 	step()
 	function  step() {
 		a++;
-		if (a>=50) {
+		if (a>=15) {
 			cancelAnimationFrame(id);
 			bol = false;
 			hua_bol = true;
 		}
-		$tab_img.eq(m).css({opacity:a/50});
+		$tab_img.eq(m).css({opacity:a/15});
 		d = requestAnimationFrame(step);
 	}
 }
