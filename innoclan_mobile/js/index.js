@@ -26,8 +26,6 @@ $search.focus(function () {
 //轮播图
 var swiperH = new Swiper('.swiper-container-h', {
     pagination: '.swiper-pagination-h',
-    paginationClickable: true,
-    spaceBetween: 50,
     loop : true,
     autoplay:3000,
     autoplayDisableOnInteraction: false
