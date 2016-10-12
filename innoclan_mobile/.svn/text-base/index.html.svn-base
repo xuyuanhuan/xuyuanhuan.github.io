@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>创意族INNOCLAN.COM官网－专业的全球创意产品B2B平台</title>
+    <!--网页关键词-->
+    <meta name="keywords" content="" />
+    <!--网页描述-->
+    <meta name="description" content="" />
+    <!--适配当前屏幕-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--禁止自动识别电话号码-->
+    <meta name="format-detection" content="telephone=no" />
+    <!--禁止自动识别邮箱-->
+    <meta content="email=no" name="format-detection" />
+    <!--iphone中safari私有meta标签,
+        允许全屏模式浏览,隐藏浏览器导航栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--iphone中safari顶端的状态条的样式black(黑色)-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <img class="nav" src="images/index/nav.jpg" alt=""><img class="logo" src="images/index/logo.jpg" alt="">
+            <div class="language fr">En</div>
+        </div>
+        <div class="content">
+            <input class="search" type="text" placeholder="搜索产品">
+            <div class="tab">
+                <img class="tab_bg" src="images/index/b1.png" alt="">
+                <img class="tab_img" style="opacity:1;" src="images/index/b1.png" alt="">
+                <img class="tab_img" src="images/index/b2.png" alt="">
+                <img class="tab_img" src="images/index/b3.png" alt="">
+                <img class="tab_img" src="images/index/b4.png" alt="">
+                <img class="tab_img" src="images/index/b1.png" alt="">
+                <img class="tab_img" src="images/index/b2.png" alt="">
+                <img class="tab_img" src="images/index/b4.png" alt="">
+                <img class="tab_img" src="images/index/b3.png" alt="">
+                <div>
+                    <span style="background:yellow;"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="classify">
+                <a href="">生活护理</a><a href="">户外出行</a><a href="">消费电子</a><a href="">家居日用</a><a href="">运动健康</a><a href="">玩具娱乐</a><a href="">办公文具</a><a href="">其他</a>
+            </div>
+            <div class="hot_search clear">
+                <div class="hot_search_tit">热门搜索</div>
+                <img src="images/index/resou1.jpg" alt="">
+                <img src="images/index/resou2.jpg" alt="">
+                <img src="images/index/resou3.jpg" alt="">
+                <img src="images/index/resou4.jpg" alt="">
+                <img src="images/index/resou5.jpg" alt="">
+                <img src="images/index/resou6.jpg" alt="">
+                <img src="images/index/resou7.jpg" alt="">
+                <img src="images/index/resou8.jpg" alt="">
+            </div>
+            <div class="hot_week clear" >
+                <div class="hot_week_tit">每周热品</div>
+                <img src="images/index/repin1.jpg" alt="">
+                <img src="images/index/repin2.jpg" alt="">
+                <img src="images/index/repin3.jpg" alt="">
+                <img src="images/index/repin4.jpg" alt="">
+                <img src="images/index/repin5.jpg" alt="">
+                <img src="images/index/repin6.jpg" alt="">
+                <img src="images/index/repin7.jpg" alt="">
+                <img src="images/index/repin8.jpg" alt="">
+            </div>
+            <ul class="xiala clear" id="xiala">
+                <li>
+                    <img src="images/index/xiala1.jpg" alt="">
+                    <span>智能止鼾仪</span>
+                </li>
+                <li>
+                    <img src="images/index/xiala2.jpg" alt="">
+                    <span>电脑投影仪一体机</span>
+                </li>
+                <li>
+                    <img src="images/index/xiala3.jpg" alt="">
+                    <span>Doogee迷你投影仪</span>
+                </li>
+                <li>
+                    <img src="images/index/xiala4.jpg" alt="">
+                    <span>Doogee迷你投影仪</span>
+                </li>
+            </ul>
+            <div id="loading"></div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+(function(html){
+    change();
+    function change(){
+        var w = html.clientWidth;
+        var size = 100*(w/720).toFixed(2);
+        html.style.fontSize = size+"px";
+    }
+    window.addEventListener('resize',function () {
+        change();
+    })
+})(document.documentElement)
+</script>
+<script type="text/javascript" src="js/index.js"></script>
+</html>
