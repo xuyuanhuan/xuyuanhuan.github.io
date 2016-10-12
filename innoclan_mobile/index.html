@@ -21,6 +21,7 @@
     <!--iphone中safari顶端的状态条的样式black(黑色)-->
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
 </head>
 <body>
     <div class="wrap">
@@ -36,19 +37,18 @@
         </div>
         <div class="content">
             <input class="search" type="text" placeholder="搜索产品">
-            <div class="tab">
-                <img class="tab_bg" src="images/index/b1.png" alt="">
-                <img class="tab_img" style="opacity:1;" src="images/index/b1.png" alt="">
-                <img class="tab_img" src="images/index/b2.png" alt="">
-                <img class="tab_img" src="images/index/b3.png" alt="">
-                <img class="tab_img" src="images/index/b4.png" alt="">
-                <img class="tab_img" src="images/index/b1.png" alt="">
-                <img class="tab_img" src="images/index/b2.png" alt="">
-                <img class="tab_img" src="images/index/b4.png" alt="">
-                <img class="tab_img" src="images/index/b3.png" alt="">
-                <div>
-                    <span style="background:yellow;"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+             <div class="swiper-container swiper-container-h">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide ver1"><img class="datu" src="images/index/b1.png" alt=""></div>
+                    <div class="swiper-slide ver1"><img class="datu" src="images/index/b2.png" alt=""></div>
+                    <div class="swiper-slide ver1"><img class="datu" src="images/index/b3.png" alt=""></div>
+                    <div class="swiper-slide ver1"><img class="datu" src="images/index/b4.png" alt=""></div>
+                    <div class="swiper-slide ver1"><img class="datu" src="images/index/b1.png" alt=""></div>
+                    <div class="swiper-slide ver1"><img class="datu" src="images/index/b2.png" alt=""></div>
+                    <div class="swiper-slide ver1"><img class="datu" src="images/index/b3.png" alt=""></div>
+                    <div class="swiper-slide ver1"><img class="datu" src="images/index/b4.png" alt=""></div>
                 </div>
+                <div class="swiper-pagination swiper-pagination-h"></div>
             </div>
             <div class="classify">
                 <a href="">生活护理</a><a href="">户外出行</a><a href="">消费电子</a><a href="">家居日用</a><a href="">运动健康</a><a href="">玩具娱乐</a><a href="">办公文具</a><a href="">其他</a>
@@ -99,6 +99,7 @@
     </div>
 </body>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
 <script type="text/javascript">
 (function(html){
     change();

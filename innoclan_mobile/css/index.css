@@ -117,42 +117,15 @@ html, body {
 	background-size: 0.4rem auto;
 	background-position: 2.3rem 0.13rem;
 }
-.tab{
-	position: relative;
-	width: 100%;
-}
-.tab img{
-	border: 0;
-}
-.tab .tab_bg{
+.datu{
     width: 100%;
-    opacity: 0;
 }
-.tab .tab_img{
-    width: 100%;
-    position: absolute;
-    top: 0;
-    opacity: 0;
+.swiper-pagination-h span{
+	background:yellow;
 }
-.tab div{
-	text-align: center;
-    position: absolute;
-    z-index: 9;
-    left: 0;
-    right: 0;
-    bottom: 0.28rem;
-    margin: auto;
-}
-.tab div span{
-    display: inline-block;
-    width: 0.14rem;
-    height: 0.14rem;
-    background: #fff;
-    border-radius: 0.7rem;
-    margin-right: 0.09rem;
-}
-.tab div span:nth-last-child(1){
-    margin: 0;
+.classify{
+	border-top: 1px solid #d2d2d2;
+	margin-top: 0.1rem;
 }
 .classify a{
 	display: inline-block;
