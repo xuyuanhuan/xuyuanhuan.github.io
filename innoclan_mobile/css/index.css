@@ -120,6 +120,9 @@ html, body {
 .datu{
     width: 100%;
 }
+.ver1{
+	margin-right: 0;
+}
 .swiper-pagination-h span{
 	background:#ffe000;
 }
@@ -238,4 +241,5 @@ html, body {
 	margin: 0.2rem auto;
 	background: url(../images/index/loading.png) no-repeat;
 	background-size: 100% auto;
+	display: none;
 }
