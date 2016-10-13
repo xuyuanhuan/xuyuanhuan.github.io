@@ -1,0 +1,74 @@
+.wrap{
+	width: 100%;
+	font-size: 12px;
+	font-family: "source-han-sans-simplified-c",sans-serif!important;
+}
+/*头部样式*/
+.header{
+	width: 6.6rem;
+	padding: 0 0.3rem;
+	margin: auto;
+	position: relative;
+	background: #fafafa;
+	box-shadow: 0 3px 3px #e5e5e5;
+}
+.header a{
+	display: inline-block;
+	width: 0.23rem;
+	line-height: 0.86rem;
+}
+.header a img{
+	width: 100%;
+}
+.header .nav{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0.145rem;
+	margin: auto;
+	text-align: center;
+}
+.header .nav span{
+	line-height: 0.68rem;
+	display: inline-block;
+	font-size: 0.3rem;
+	color: #000;
+	padding: 0 0.15rem;
+}
+.header .nav span:nth-child(2){
+	margin: 0 0.5rem;
+}
+.header .nav .select{
+	border-bottom: 0.04rem solid #f5d721;
+	color: #f5d721;
+}
+.header .language{
+	width: 0.54rem;
+	line-height: 0.54rem;
+	font-size: 0.3rem;
+	color: #fff;
+	background: #f5d824;
+	text-align: center;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	margin-top: 0.2rem;
+}
+/*中间样式*/
+.content{
+	width: 100%;
+}
+.content .con{
+	display: none;
+}
+.content .con1{
+	display: block;
+}
+.content .con1 .pintu{
+	background: #f5f5f5;
+	border-bottom: 1px solid #e6e6e6;
+}
+.content .con1 .pintu img{
+	width: 100%;
+	margin: 0.10rem 0 0.2rem;
+	border-bottom: 0.03rem solid #978078;
+}

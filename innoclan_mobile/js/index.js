@@ -32,6 +32,7 @@ window.onload = function() {
 	});
 
 	// 下拉刷新
+
 	var img_src = ['images/index/xiala1.jpg','images/index/xiala2.jpg','images/index/xiala3.jpg','images/index/xiala4.jpg','images/index/xiala1.jpg','images/index/xiala2.jpg','images/index/xiala3.jpg','images/index/xiala4.jpg'];
 	var loading = document.getElementById('loading');
 	var xiala = document.getElementById('xiala');
@@ -49,12 +50,11 @@ window.onload = function() {
 		wrapH = wrap.offsetHeight;
 		h = wrapH-sTop;
 		xiala.addEventListener('touchmove',function (e) {
-			if (key<7) {
+			if (key<7 && h<wH+150) {
 				var e = e || window.event;
 				y = disy - e.touches[0].clientY;
 				wrap.style.height = wrapH + y +'px';
 				loading.style.display = 'block';
-				console.log(y,h)
 			};	
 		},true)
 	},false)
@@ -64,11 +64,11 @@ window.onload = function() {
 			xiala_bol = false;
 		}else{
 			wrap.style.height = wrapH + 30 +'px';
-			if (y>5 && xiala_bol && h<wH+30) {
+			if (y>5 && xiala_bol && h<wH+150) {
 				xiala_bol = false;
 				for (var i = 0; i < 2; i++) {
 					var li = document.createElement('li');
-					li.innerHTML = '<img src="'+img_src[key]+'" alt=""><span>智能止鼾仪</span>';
+					li.innerHTML = '<a href=""><img src="'+img_src[key]+'" alt=""><span>智能止鼾仪</span></a>';
 					xiala.appendChild(li);
 					loading.style.display = 'none';
 					wrap.style.height ='auto';
