@@ -41,36 +41,41 @@ window.onload = function() {
 	var y = 0;
 	var h = 0;
 	var wrapH = wrap.offsetHeight;
-	content.addEventListener('touchstart',function(e){
+	var wH = document.documentElement.clientHeight;
+	xiala.addEventListener('touchstart',function(e){
 		var e = e || window.event;
 		var disy = e.touches[0].clientY;
 		var sTop = document.body.scrollTop || document.documentElement.scrollTop;
 		wrapH = wrap.offsetHeight;
-		var wH = document.documentElement.clientHeight;
-		h = wH+sTop-wrapH;
-		content.addEventListener('touchmove',function (e) {
-			var e = e || window.event;
-			y = disy - e.touches[0].clientY;
-			wrap.style.height = wrapH + y +'px';
-			loading.style.display = 'block';
-		},false)
+		h = wrapH-sTop;
+		xiala.addEventListener('touchmove',function (e) {
+			if (key<7) {
+				var e = e || window.event;
+				y = disy - e.touches[0].clientY;
+				wrap.style.height = wrapH + y +'px';
+				loading.style.display = 'block';
+				console.log(y,h)
+			};	
+		},true)
 	},false)
 	document.addEventListener('touchend',function(e) {
-		wrap.style.height = wrapH + 30 +'px';
-		if (y>30 && xiala_bol && h>-20) {
-			xiala_bol = false;
-			for (var i = 0; i < 2; i++) {
-				var li = document.createElement('li');
-				li.innerHTML = '<img src="'+img_src[key]+'" alt=""><span>智能止鼾仪</span>';
-				xiala.appendChild(li);
-				loading.style.display = 'none';
-				key++;
-			};
-		};
-		xiala_bol = true;
 		if (key>7) {
 			loading.style.display = 'none';
 			xiala_bol = false;
+		}else{
+			wrap.style.height = wrapH + 30 +'px';
+			if (y>5 && xiala_bol && h<wH+30) {
+				xiala_bol = false;
+				for (var i = 0; i < 2; i++) {
+					var li = document.createElement('li');
+					li.innerHTML = '<img src="'+img_src[key]+'" alt=""><span>智能止鼾仪</span>';
+					xiala.appendChild(li);
+					loading.style.display = 'none';
+					wrap.style.height ='auto';
+					key++;
+				};
+			};
+			xiala_bol = true;
 		};
 	},false);
 }
