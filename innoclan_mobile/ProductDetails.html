@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>产品详情</title>
+	<!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页关键词-->
+    <meta name="keywords" content="" />
+    <!--网页描述-->
+    <meta name="description" content="" />
+    <!--适配当前屏幕-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--禁止自动识别电话号码-->
+    <meta name="format-detection" content="telephone=no" />
+    <!--禁止自动识别邮箱-->
+    <meta content="email=no" name="format-detection" />
+    <!--iphone中safari私有meta标签,
+        允许全屏模式浏览,隐藏浏览器导航栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--iphone中safari顶端的状态条的样式black(黑色)-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/productdetail.css">
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<a href="###"><img src="images/productdetail/return.jpg" alt=""></a>
+			<p class="nav">
+				<span class="select">产品</span>
+				<span>详情</span>
+				<span>联系电话</span>
+			</p>
+			<div class="language fr">EN</div>
+		</div>
+		<div class="content">
+			<div class="con1 con">
+				<div class="pintu">
+					<img src="images/productdetail/pin1.jpg" alt="">
+				</div>
+			</div>
+			<div class="con2 con">2</div>
+			<div class="con3 con">3</div>
+		</div>
+		<div class="footer"></div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+(function(html){
+    change();
+    function change(){
+        var w = html.clientWidth;
+        var size = 100*(w/720).toFixed(2);
+        html.style.fontSize = size+"px";
+    }
+    window.addEventListener('resize',function () {
+        change();
+    })
+})(document.documentElement)
+</script>
+<script type="text/javascript" src="js/productdetail.js"></script>
+</html>
