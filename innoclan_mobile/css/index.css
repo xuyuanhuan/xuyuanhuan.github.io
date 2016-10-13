@@ -242,6 +242,10 @@ html, body {
 	-webkit-animation: load 1.8s linear infinite;
 	animation: load 1.8s linear infinite;
 }
+@-webkit-keyframes load{
+	from{-webkit-transform: rotateZ(0deg);}
+	to{-webkit-transform: rotateZ(360deg);}
+}
 @keyframes load{
 	from{transform: rotateZ(0deg);}
 	to{transform: rotateZ(360deg);}
