@@ -239,6 +239,7 @@ html, body {
 	background: url(../images/index/loading.png) no-repeat;
 	background-size: 100% auto;
 	/*display: none;*/
+	-webkit-animation: load 1.8s linear infinite;
 	animation: load 1.8s linear infinite;
 }
 @keyframes load{
