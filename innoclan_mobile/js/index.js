@@ -40,33 +40,36 @@ window.onload = function() {
 	var xiala_bol = true;
 	var y = 0;
 	var h = 0;
+	var wrapH = wrap.offsetHeight;
 	content.addEventListener('touchstart',function(e){
 		var e = e || window.event;
 		var disy = e.touches[0].clientY;
 		var sTop = document.body.scrollTop || document.documentElement.scrollTop;
-		var wrapH = wrap.offsetHeight;
+		wrapH = wrap.offsetHeight;
 		var wH = document.documentElement.clientHeight;
 		h = wH+sTop-wrapH;
 		content.addEventListener('touchmove',function (e) {
 			var e = e || window.event;
 			y = disy - e.touches[0].clientY;
-			// loading.style.display = 'block';
+			wrap.style.height = wrapH + y +'px';
+			loading.style.display = 'block';
 		},false)
 	},false)
 	document.addEventListener('touchend',function(e) {
+		wrap.style.height = wrapH + 30 +'px';
 		if (y>30 && xiala_bol && h>-20) {
 			xiala_bol = false;
 			for (var i = 0; i < 2; i++) {
 				var li = document.createElement('li');
 				li.innerHTML = '<img src="'+img_src[key]+'" alt=""><span>智能止鼾仪</span>';
 				xiala.appendChild(li);
-				// loading.style.display = 'none';
+				loading.style.display = 'none';
 				key++;
 			};
 		};
 		xiala_bol = true;
 		if (key>7) {
-			// loading.style.display = 'none';
+			loading.style.display = 'none';
 			xiala_bol = false;
 		};
 	},false);

@@ -238,7 +238,7 @@ html, body {
 	margin: 0.2rem auto;
 	background: url(../images/index/loading.png) no-repeat;
 	background-size: 100% auto;
-	/*display: none;*/
+	display: none;
 	-webkit-animation: load 1.8s linear infinite;
 	animation: load 1.8s linear infinite;
 }
