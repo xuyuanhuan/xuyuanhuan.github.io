@@ -72,3 +72,50 @@
 	margin: 0.10rem 0 0.2rem;
 	border-bottom: 0.03rem solid #978078;
 }
+.content .con1 .message{
+	margin: 0.4rem 0 0.65rem 0.5rem;
+}
+.content .con1 .message .message_tit{
+	font-size: 0.3rem;
+	color: black;
+	margin-bottom: 0.05rem;
+}
+.content .con1 .message p{
+	line-height: 0.4rem;
+	font-size: 0.24rem;
+	color: #666666;
+}
+.content .con1 .sub{
+	width: 100%;
+	text-align: center;
+}
+.content .con1 .sub .sub_l{
+	width: 40%;
+}
+.content .con1 .sub .sub_l div{
+	width: 50%;
+	height: 1.08rem;
+	padding-top: 0.56rem;
+	line-height: 0.40rem;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	color: #666666;
+	font-size: 0.24rem;
+	border-top: 1px solid #b5b5b5;
+	border-bottom: 1px solid #b5b5b5;
+}
+.content .con1 .sub .sub_l .collect{
+	border-right: 1px solid #b5b5b5;
+	background: url(../images/productdetail/collect.jpg) no-repeat center 0.23rem;
+	background-size: 0.39rem auto;
+}
+.content .con1 .sub .sub_l .share{
+	background: url(../images/productdetail/share.jpg) no-repeat center 0.23rem;
+	background-size: 0.4rem auto;
+}
+.content .con1 .sub .sub_r{
+	width: 60%;
+	line-height: 1.08rem;
+	background: #ffe000;
+	font-size: 0.44rem;
+}

@@ -48,6 +48,7 @@
 }
 /*中间样式*/
 .content img{
+	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
 }
 .search{
@@ -61,16 +62,13 @@
 	text-align: center;
 	color: #9c9c9c;
 	font-size: 0.3rem;
-	background-image: url(../images/index/fangda.jpg);
+	background-image: url(../images/index/sousuo.png);
 	background-repeat: no-repeat;
 	background-size: 0.4rem auto;
 	background-position: 2.3rem 0.13rem;
 }
 .datu{
     width: 100%;
-}
-.ver1{
-	margin-right: 0;
 }
 .classify{
 	border-top: 1px solid #d2d2d2;

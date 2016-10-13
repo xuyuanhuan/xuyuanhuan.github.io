@@ -1,3 +1,11 @@
+//轮播图
+var swiperH = new Swiper('.swiper-container-h', {
+    pagination: '.swiper-pagination-h',
+    loop : true,
+    autoplay:3000,
+    autoplayDisableOnInteraction: false
+});
+
 window.onload = function() {
 	// 导航栏
 	var $nav = $('.nav');
@@ -19,17 +27,9 @@ window.onload = function() {
 	}).focusout(function  () {
 		if ($search.val()=='') {
 			$search.attr({placeholder:'搜索产品'})
-			.css({backgroundImage:'url(images/index/fangda.jpg)'})
+			.css({backgroundImage:'url(images/index/sousuo.png)'})
 		};
 	})
-
-	//轮播图
-	var swiperH = new Swiper('.swiper-container-h', {
-	    pagination: '.swiper-pagination-h',
-	    loop : true,
-	    autoplay:3000,
-	    autoplayDisableOnInteraction: false
-	});
 
 	// 下拉刷新
 
