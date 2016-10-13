@@ -233,12 +233,13 @@ html, body {
 	margin-right: 0;
 }
 #loading{
-	width: 0.43rem;
 	height: 0.43rem;
+	text-align: center;
 	margin: 0.2rem auto;
-	background: url(../images/index/loading.png) no-repeat;
-	background-size: 100% auto;
 	display: none;
+}
+#loading img{
+	height: 100%;
 	-webkit-animation: load 1.8s linear infinite;
 	animation: load 1.8s linear infinite;
 }
