@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>唐天智，回家吧</title>
+	<link rel="icon" href="images/ico1.ico" type="image/x-icon"/>
+    <!--网页关键词-->
+    <meta name="keywords" content="回家" />
+    <!--网页描述-->
+    <meta name="description" content="" />
+    <!--适配当前屏幕-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--禁止自动识别电话号码-->
+    <meta name="format-detection" content="telephone=no" />
+    <!--禁止自动识别邮箱-->
+    <meta content="email=no" name="format-detection" />
+    <!--iphone中safari私有meta标签,
+        允许全屏模式浏览,隐藏浏览器导航栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--iphone中safari顶端的状态条的样式black(黑色)-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+	body,ul,ol,p,h1,h2,h3,h4,h5,dl,dd,form,input,textarea,
+	td,th,button,strong,em,span,select,video,canvas{
+		margin:0;padding:0;
+	}
+	li{
+		list-style:none;vertical-align:top;
+	}
+	table{ 
+		border-collapse:collapse;
+	}
+	input:focus{
+	  border: none;
+	  outline:none;
+	}
+	textarea{
+		resize:none;overflow:auto;
+	}
+	img{ 
+		border:none; vertical-align:middle;
+	}
+	em{ 
+		font-style:normal;
+	}
+	a{ 
+		text-decoration:none;
+		color: black;
+	}
+	a{
+		-webkit-appearance: none;
+		-webkit-tap-highlight-color:rgba(0,0,0,0);
+	}
+	a,img {
+		-webkit-touch-callout: none; 
+	}
+	html,body{
+		font-size: 100px;
+		width: 100%;
+		height: 100%;
+	}
+	.clear:after{
+	    content:''; 
+	    display:block; 
+	    clear:both;
+	}
+	.fl{
+	    float:left;
+	}
+	.fr{
+	    float:right;
+	}
+	.wrap{
+		width: 100%;
+		height: 100%;
+		font-size: 12px;
+		background: #f1f1f1;
+	}
+	.wrap .header{
+		height: 1.2rem;
+	}
+	.wrap .header div{
+		font-size: 0.6rem;
+		line-height: 1.2rem;
+		margin-left: 0.3rem;
+	}
+	.wrap .header img{
+		width: 0.8rem;
+		margin: 0.2rem 0.3rem 0 0;
+	}
+	.wrap .header .start{
+		animation: music 1.8s linear infinite;
+	}
+	@keyframes music{
+		from{transform: rotateZ(0deg);}
+		to{transform: rotateZ(360deg);}
+	}
+	.wrap .logo{
+		width: 90%;
+		margin-left: 5%;
+	}
+	.wrap .content{
+		width: 90%;
+		margin: auto;
+		margin-top: 0.5rem;
+	}
+	.wrap .content p{
+		text-indent: 2em;
+		font-size: 0.36rem;
+	}
+    </style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header clear">
+			<div class="fl">唐天智，回家吧</div><img id="music_btn" class="fr start" src="source/yue.png" alt="">
+		</div>
+		<audio id="music" src="source/given.mp3" autoplay loop></audio>
+		<img class="logo" src="source/image.jpg" alt="">
+		<div class="content">
+			<p>唐天智，河南省邓州市夏集乡唐张村人氏，今年27岁；从2011年8月于云南昆明市盘龙区金驼工作室辞职后一直未跟家人联系；家人万分着急，敬请看到的朋友转告他向家人报个平安，谨此代其家人向大家表示万分感激，谢谢！</p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+(function(html){
+    change();
+    function change(){
+        var w = html.clientWidth;
+        var size = 100*(w/800).toFixed(2);
+        html.style.fontSize = size+"px";
+    }
+    window.addEventListener('resize',function () {
+        change();
+    })
+})(document.documentElement);
+var music_btn = document.getElementById('music_btn');
+var music = document.getElementById('music');
+var music_bol = true;
+music_btn.onclick = function() {
+	if (music_bol) {
+		music.pause();
+		this.src = 'source/yue1.png';
+		this.className = 'fr';
+	}else {
+		music.play();
+		this.src = 'source/yue.png';
+		this.className = 'fr start';
+	}
+}
+</script>
+</html>
