@@ -138,9 +138,10 @@ var music_btn = document.getElementById('music_btn');
 var music = document.getElementById('music');
 var music_bol = true;
 music_btn.onclick = function() {
+	music_bol = !music_bol;
 	if (music_bol) {
 		music.pause();
-		this.src = 'source/yue1.png';
+		this.src = 'source/yue2.png';
 		this.className = 'fr';
 	}else {
 		music.play();
