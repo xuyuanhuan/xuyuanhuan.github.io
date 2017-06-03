@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/fly.css">
+</head>
+<body>
+	<div class="wrap">
+		<canvas></canvas>
+		<div class="start">
+			<input type="text" value="">
+			<button>开始游戏</button>
+		</div>
+		<div class="end">
+			<input type="button" value="提交分数">
+			<button>重新开始</button>
+		</div>
+		<ul class="sort">
+			<p>再来一局</p>
+			<div>成绩排名</div>
+			<ul class="inner"></ul>
+		</ul>
+	</div>
+	<audio src="source/bullet.mp3"></audio>
+	<audio src="source/enemy1_down.mp3"></audio>
+	<audio src="source/enemy2_down.mp3"></audio>
+	<audio src="source/enemy2_out.mp3"></audio>
+	<audio src="source/enemy3_down.mp3"></audio>
+	<audio src="source/game_over.mp3"></audio>
+	<audio src="source/game_music.mp3" autoplay loop></audio>
+</body>
+<script type="text/javascript" src="js/bg.js"></script>
+<script type="text/javascript" src="js/hero.js"></script>
+<script type="text/javascript" src="js/bullet.js"></script>
+<script type="text/javascript" src="js/enemy1.js"></script>
+<script type="text/javascript" src="js/enemy2.js"></script>
+<script type="text/javascript" src="js/enemy3.js"></script>
+<script type="text/javascript" src="js/enemy4.js"></script>
+<script type="text/javascript">
+var wrap = document.querySelector('.wrap');
+var canvas = document.getElementsByTagName('canvas')[0];
+var audio = document.getElementsByTagName('audio');
+var ctx = canvas.getContext('2d');
+var startbtn = document.getElementsByClassName('start')[0];
+var user = startbtn.getElementsByTagName('input')[0];
+var btn = startbtn.getElementsByTagName('button')[0];
+var end = document.getElementsByClassName('end')[0];
+var sub = end.getElementsByTagName('input')[0];
+var again = end.getElementsByTagName('button')[0];
+var paiming = document.getElementsByTagName('ul')[0];
+var againgame = document.getElementsByTagName('p')[0];
+var inner = paiming.getElementsByTagName('ul')[0];
+canvas.width = document.documentElement.clientWidth || document.body.clientWidth;
+canvas.height = document.documentElement.clientHeight || document.body.clientHeight;
+if (canvas.width>768) {canvas.width=768}
+var oArr = [];
+console.log(wrap.offsetLeft)
+var scoreArr = '';
+var score = 0;
+var bom = 0;
+var num = 1;
+var arr = ["img/background_2.png","img/hero_fly_1.png","img/hero_fly_2.png","img/hero_blowup_1.png","img/hero_blowup_2.png","img/hero_blowup_3.png","img/hero_blowup_4.png","img/bullet1.png","img/bullet2.png","img/enemy1_fly_1.png","img/enemy1_blowup_1.png","img/enemy1_blowup_2.png","img/enemy1_blowup_3.png","img/enemy1_blowup_4.png","img/enemy2_fly_1.png","img/enemy2_fly_2.png","img/enemy2_hit_1.png","img/enemy2_blowup_1.png","img/enemy2_blowup_2.png","img/enemy2_blowup_3.png","img/enemy2_blowup_4.png","img/enemy2_blowup_5.png","img/enemy2_blowup_6.png","img/enemy2_blowup_7.png","img/enemy3_fly_1.png","img/enemy3_hit_1.png","img/enemy3_hit_2.png","img/enemy3_blowup_1.png","img/enemy3_blowup_2.png","img/enemy3_blowup_3.png","img/enemy3_blowup_4.png","img/enemy4_fly_1.png","img/enemy5_fly_1.png","img/bomb.png","img/game_pause_hl.png","img/game_pause.png","img/loading0.png","img/loading1.png","img/loading2.png","img/loading3.png"];
+loading(arr,function() {
+	start()
+})
+function evaluate() {
+	bg = new Bg();
+	hero = new Hero(66,80);
+	bullet = new Bullet(6);
+	e1 = new Enemy1(34,24);
+	e2 = new Enemy2(110,169);
+	e3 = new Enemy3(46,60);
+	e4 = new Enemy4(39,68);
+	pa_bol = false;
+	over_bol =false;
+	index = 0;
+	score = 0;
+	bom = 0;
+	num = 1;
+}
+var bg = new Bg();
+var hero = new Hero(66,80);
+var bullet = new Bullet(6);
+var e1 = new Enemy1(34,24);
+var e2 = new Enemy2(110,169);
+var e3 = new Enemy3(46,60);
+var e4 = new Enemy4(39,68);
+var pa_bol = false;
+var Allarr = [];
+var over_bol =false;
+var index = 0;
+var paArr = oArr[34];
+function start() {
+	step();
+	function step() {
+		Allarr = e1.arr.concat(e2.arr,e3.arr);
+		bg.draw();
+		e2.draw();
+		e3.draw();
+		e1.draw();
+		e4.draw();
+		bullet.draw(hero,Allarr,num);
+		hero.draw(Allarr,e4.arr);
+		if (num ==2) {
+			index++;
+			if (index>0) {
+				num = 1;
+				index = 0;
+			}
+		}
+		drawpause();
+		ctx.beginPath()
+		ctx.font = '20px 黑体';
+		ctx.textBaseline = 'top';
+		ctx.fillStyle = 'white';
+		ctx.fillText('分数:'+score,5,10);
+		ctx.closePath();
+		var id = requestAnimationFrame(step);
+		if (pa_bol || over_bol) {
+			cancelAnimationFrame(id)
+		}
+	}
+}
+var danarr = oArr[7],danx = canvas.width - 36,dan_bol = true;
+var dx = 0,dy = 0,x = 0,y = 0,ex = 0, ey = 0;
+	canvas.onmousedown = function(e) {
+		var e = event || document.event;
+		ex = e.clientX;
+		ey = e.clientY;
+		puaseFn()
+		canvas.onmousemove = function(e) {
+			var e = event || document.event;
+			x = e.clientX - dx;
+			y = e.clientY - dy;
+			flyFn()
+		};
+		e.preventDefault();
+	}
+	canvas.addEventListener("touchstart",function(e) {
+		ex = e.touches[0].clientX;
+		ey = e.touches[0].clientY;
+		puaseFn()
+		e.preventDefault();
+	});
+	
+	canvas.addEventListener("touchmove",function(e) {
+		x = e.touches[0].clientX - dx;
+		y = e.touches[0].clientY - dy;
+		flyFn()
+	})	
+	canvas.onmouseup = function () {
+		canvas.onmousemove = "";
+	}
+	document.addEventListener('touchend',function(e) {
+		document.addEventListener('touchmove','',false);
+	});
+function puaseFn() {
+	dx = ex - hero.x;
+	dy = ey - hero.y;
+	if (wrap.offsetLeft+15<ex&&ex<wrap.offsetLeft+43&&canvas.height-45<ey&&ey<canvas.height-15&&!over_bol) {
+		pa_bol = !pa_bol;
+		if (pa_bol ==false) {
+			start()
+			paArr = oArr[35];
+		}else {
+			paArr = oArr[34];
+		}
+	}
+	if (wrap.offsetLeft+60<ex&&ex<wrap.offsetLeft+110&&canvas.height-45<ey&&ey<canvas.height-5) {
+		if (bom>0&&!pa_bol) {
+			bom--;
+			for (var i = 0; i < Allarr.length; i++) {
+				Allarr[i].hp = 0;
+			}
+		}
+	}
+}
+function flyFn() {
+	if (x<0) {x=0}
+	if (x>canvas.width-hero.w) {x = canvas.width-hero.w}
+	if (y<0) {y=0}
+	if (y>canvas.height-hero.h) {y = canvas.height-hero.h}
+	hero.x = x;
+	hero.y = y;
+}
+function drawpause() {
+	ctx.drawImage(paArr,15,canvas.height-45);
+	ctx.drawImage(oArr[33],60,canvas.height-45);
+
+	ctx.beginPath()
+	ctx.font = '24px 黑体';
+	ctx.textBaseline = 'top';
+	ctx.fillStyle = 'white';
+	ctx.fillText(bom,110,canvas.height-39);
+	ctx.closePath();
+}
+function loading(arr,fn) {
+		var index=0
+		for (var i = 0; i < arr.length; i++) {
+			var img=new Image()
+			img.src=arr[i]
+			oArr.push(img)
+			img.onload=function () {
+				index++
+				if (index==arr.length) {
+					var bg=oArr[0]
+					var loadingImg=oArr[39]
+					var x=-canvas.width
+					step()
+					function step() {
+						x+=8
+						ctx.drawImage(bg,0,0,canvas.width,canvas.height)
+						ctx.drawImage(loadingImg,x,300,canvas.width,80)
+						id=requestAnimationFrame(step)
+						if (x>canvas.width) {
+							startbtn.style.display = 'block';
+							cancelAnimationFrame(id)
+							startGame(fn)
+						}
+					}
+				}
+			}
+		}		
+	}
+function startGame(fn) {
+	btn.onclick = function() {
+		if (user.value=='') {
+			alert('请输入用户名')
+		}else {
+			audio[6].pause();
+			startbtn.style.display = 'none';
+			fn&&fn()
+		}
+		return false;
+	}
+}
+again.onclick = function() {
+	evaluate();
+	start();
+	end.style.display = 'none';
+	audio[6].pause();
+}
+
+sub.onclick = function() {
+	paiming.style.display = 'block';
+	end.style.display = 'none';
+	scoreArr = localStorage.getItem("scoreArr") || '';
+	scoreArr += localStorage.getItem(user.value)+',';
+	localStorage.setItem('scoreArr',scoreArr);
+	sortFn();
+	createFn();
+}
+againgame.onclick = function() {
+	inner.innerHTML ='';
+	loading(arr,function() {
+		evaluate();
+		start()
+	})
+	paiming.style.display = 'none';
+}
+function sortFn() {
+	scoreArr = localStorage.getItem('scoreArr');
+	scoreArr = scoreArr.split(',');
+	scoreArr.pop();
+	for (var i = 0; i < scoreArr.length; i++) {
+		for (var j = i+1; j < scoreArr.length; j++) {
+		    if (scoreArr[i]<scoreArr[j]) {
+		    	scoreArr.splice(i,0,scoreArr.splice(j,1));
+		    }
+		}
+	}
+	return scoreArr;
+}
+function createFn() {
+	for (var i = 0; i < scoreArr.length; i++) {
+		var sortArr = String(scoreArr[i]).split('.');
+		var li = document.createElement('li');	
+		li.innerHTML = '<span></span><span></span>';
+		li.children[0].innerHTML = i+1+'.'+sortArr[1];
+		li.children[1].innerHTML = sortArr[0];
+		inner.appendChild(li);
+	}
+}
+</script>
+</html>
